@@ -1,10 +1,11 @@
 import React from "react";
+import Home from "./components/Home/Home.jsx";
 
 const App = () => {
   return (
-    <div>
-      <h1 className="bg-red-500 text-5xl">Hello, World!</h1>
-      <p className="bg-amber-500 text-3xl">Welcome to my React application.</p>
+    <div  className='font-poppins'>
+      
+      <Home />
     </div>
   );
 }
