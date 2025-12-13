@@ -1,0 +1,30 @@
+import React from 'react'
+import grocery from '../../assets/grocery.png'
+import Button from '../Button/Button.jsx'
+
+const Hero = () => {
+  return (
+    <section >
+        <div className="max-w-[1300px] mx-auto px-10 flex items-center justify-between gap-10 py-10">
+            {/* hero content */}
+            <div className='flex-1'>
+                <span className='bg-green-200 text-green-500 text-md rounded-full px-4 py-2 '>Export Best Quality...</span>
+                <h1 className=' text-6xl/16 font-bold mt-3 '>
+                    Taste Organic <span className='text-green-500'>Fruits</span> & <span className='text-green-500'>Veggies</span> <br /> In Your City
+                    </h1>
+                    <p className='text-zinc-800 text-md mt-3'>
+                        Bred for a high content of beneficial substances. Our products are all fresh and healthy.
+                    </p>
+                    <Button content="Shop Now" />
+            </div>
+
+            {/* hero image */}
+            <div className='flex-1'>
+                <img src={grocery} alt="hero image" />
+            </div>
+        </div>
+    </section>
+  )
+}
+
+export default Hero

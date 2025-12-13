@@ -11,9 +11,9 @@ const Navbar = () => {
   return (
     <div>
       <header className=''>
-        <nav className='max-w-[1300px] mx-auto mt-5 px-10 flex justify-between items-center h-[10vh] max'>
+        <nav className='max-w-[1300px] mx-auto px-10 mt-5 flex justify-between items-center h-[10vh] max'>
             {/* logo */}
-            <Link to="/" className='text-3xl font-semibold '>Freshify<span className='text-green-600'>X</span></Link>
+            <Link to="/" className='text-3xl font-semibold '>Freshify<span className='text-green-500'>X</span></Link>
 
             {/* Desktop Links */}
             <ul className='flex items-center gap-8 font-medium'>
@@ -30,7 +30,7 @@ const Navbar = () => {
                 {/* input field */}
                 <div className='flex pl-4 pr-1 py-1 rounded-full border border-green-300 '>
                   <input type="text" name="text" id='text' placeholder='Search' className='focus:outline-none'/>
-                  <button className='bg-gradient-to-t from-green-400 to-green-600 rounded-full text-white flex items-center justify-center text-2xl w-10 h-10 p-2 '>
+                  <button className='bg-linear-to-b from-green-400 to-green-600 rounded-full text-white flex items-center justify-center text-2xl w-10 h-10 p-2 '>
                     <IoSearch />
                   </button>
                 </div>
