@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <div>
       <header className=''>
-        <nav className='max-w-[1300px] mx-auto px-10 fixed left-0 right-0 top-0 pt-9 pb-9 bg-red-700 flex justify-between items-center md:h-[12vh] h-[10vh] max'>
+        <nav className='max-w-[1300px] mx-auto px-10 fixed left-0 right-0 top-0 pt-9 pb-9 bg-white flex justify-between items-center md:h-[12vh] h-[10vh] max'>
           {/* logo */}
           <Link to="/" className='text-3xl font-semibold '>Freshify<span className='text-green-500 text-4xl'>X</span></Link>
 
@@ -47,13 +47,14 @@ const Navbar = () => {
             <Link to="/shoppingcart" className='mt-2 text-3xl text-zinc-800 '><FaShoppingCart /></Link>
 
             {/* HamBurger */}
-            <Link to="/" onClick={toggleMenu} className='mt-2 text-3xl text-zinc-800 md:hidden'>
-            {showMenu? <TbMenu3 />: <IoMenu />}
-            </Link>
+            <button onClick={toggleMenu} className="mt-2 text-3xl text-zinc-800 md:hidden">
+              {showMenu ? <TbMenu3 /> : <IoMenu />}
+            </button> 
+            
 
             </div>
             {/* Mobile Menu */}
-          <ul className={`flex flex-col gap-y-10 p-10 bg-green-500/20 backdrop-blur-xl rounded-lg items-center gap-8 font-medium  md:hidden absolute top-20 transform left-[10%] right-[10%] transition-all duration-500 ${showMenu ? 'translate-x-0' : '-translate-x-100' }`}>
+          <ul className={`flex flex-col gap-y-10 p-10 bg-green-500/20 backdrop-blur-xl rounded-lg items-center gap-8 font-medium  md:hidden absolute top-20 transform left-[10%] right-[10%] transition-all duration-500 ${showMenu ? 'translate-x-0' : '-translate-x-169' }`}>
               <li><Link to="/" className='tracking-wider text-zinc-800 hover:text-green-500'>Home</Link></li>
               <li><Link to="/about" className='tracking-wider text-zinc-800 hover:text-green-500'>About Us</Link></li>
               <li><Link to="/process" className='tracking-wider text-zinc-800 hover:text-green-500'>Process</Link></li>
