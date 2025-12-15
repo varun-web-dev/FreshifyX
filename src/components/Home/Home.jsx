@@ -4,6 +4,7 @@ import Hero from '../Hero/Hero.jsx'
 import Category from '../Category/Category.jsx'
 import Values from '../Values/Values.jsx'
 import Heading from '../Heading/Heading.jsx'
+import Product from '../Products/Product.jsx'
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Hero />
       <Category />
       <Values />
+      <Product />
     </div>
   )
 }
