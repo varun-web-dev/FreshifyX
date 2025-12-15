@@ -19,7 +19,7 @@ const Hero = () => {
             </div>
 
             {/* hero image */}
-            <div className='flex-1'>
+            <div className='flex-1 md:mt-0 mt-30 '>
                 <img src={grocery} alt="hero image" />
             </div>
         </div>
