@@ -3,8 +3,9 @@ import FruitsCat from '../../assets/fruits-and-veggies.png'
 import DairyCat from '../../assets/dairy-and-eggs.png'
 import MeatCat from '../../assets/meat-and-seafood.png'
 import Button from '../Button/Button.jsx'
+import Heading from '../Heading/Heading.jsx'
 
-const Category = ({highlight,heading}) => {
+const Category = () => {
     const renderCards = category.map(items => {
         return (
                 // cards
@@ -29,13 +30,7 @@ const Category = ({highlight,heading}) => {
     <section>
         <div className='max-w-[1300px] mx-auto px-10 py-10 '>
             {/* Heading */}
-            <div className='flex flex-col items-center md:gap-3 gap-2 mb-10'>
-                <h2 className='md:text-4xl text-3xl font-bold text-center '>
-                    <span className='text-green-500'>{highlight}</span> {heading}
-                    </h2>
-                <div className='bg-green-500 md:w-35 w-29 h-1'></div>
-
-            </div>
+            <Heading highlight="Shop" heading="By Category" />
 
             {/* category cards */}
             <div className='md:flex flex-wrap gap-6 md:mt-10 -mt-30 '>

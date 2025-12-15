@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 import { BsBagHeartFill } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
@@ -12,14 +13,26 @@ import Home from '../Home/Home.jsx'
 
 const Navbar = () => {
   const[showMenu, setShowMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   }
+  
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div>
       <header className=''>
-        <nav className='max-w-[1300px] mx-auto px-10 fixed left-0 right-0 top-0 pt-9 pb-9 bg-white flex justify-between items-center md:h-[12vh] h-[10vh] max z-50'>
+        <nav className={`max-w-[1300px] mx-auto px-10 fixed left-0 right-0 top-0 pt-9 pb-9 bg-white flex justify-between items-center md:h-[12vh] h-[10vh] max z-50 ${scrolled ? 'shadow-lg' : '' }`}>
           {/* logo */}
           <Link to="/" className='text-3xl font-semibold '>Freshify<span className='text-green-500 text-4xl'>X</span></Link>
 
