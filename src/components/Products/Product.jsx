@@ -39,7 +39,7 @@ const Product = () => {
             </div>
 
             {/* Product Cards */}
-            <div className='grid grid-cols-4 gap-10 mt-16'>
+            <div className='grid md:grid-cols-4 grid-cols-1 gap-10 mt-16'>
                 {renderCards}
             </div>
 
