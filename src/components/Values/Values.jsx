@@ -68,25 +68,25 @@ const value = [
     {
         id: 1,
         title: "Trust",
-        paragraph: "It is a long established fact that a reader will be distracted by the readable.",
+        paragraph: "We build trust with our customers through transparency and reliability.",
         icon: <FaHeart />
     },
     {
         id: 2,
         title: "Always Fresh",
-        paragraph: "It is a long established fact that a reader will be distracted by the readable.",
+        paragraph: "Always strive to provide fresh products to our customers.",
         icon: <FaLeaf />
     },
     {
         id: 3,
         title: "Food Safety",
-        paragraph: "It is a long established fact that a reader will be distracted by the readable.",
+        paragraph: "We prioritize food safety and quality in all our offerings.",
         icon: <FaShieldAlt />
     },
     {
         id: 4,
         title: "100% Organic",
-        paragraph: "It is a long established fact that a reader will be distracted by the readable.",
+        paragraph: "Our products are sourced from organic farms to ensure purity.",
         icon: <FaSeedling />
     }
 

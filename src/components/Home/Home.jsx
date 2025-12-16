@@ -5,6 +5,7 @@ import Category from '../Category/Category.jsx'
 import Values from '../Values/Values.jsx'
 import Heading from '../Heading/Heading.jsx'
 import Product from '../Products/Product.jsx'
+import Discount from '../Discount/Discount.jsx'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Category />
       <Values />
       <Product />
+      <Discount />
     </div>
   )
 }
