@@ -15,6 +15,7 @@ const Home = () => {
       <Values />
       <Product />
       <Discount />
+      <Process />
     </div>
   )
 }
