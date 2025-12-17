@@ -27,4 +27,20 @@ Install react icons :   npm install react-icons (terminal)
 Add google font :       Choose any font and get import form it.
                         Add import in top of index.css file.
                         @theme{--font-poppins: 'Poppins', sans-serif;} 
-                        Add className="font-poppins" in app.jsx       
+                        Add className="font-poppins" in app.jsx   
+
+Install React Swiper :  npm run swiper(terminal) 
+
+                        // Import Swiper React components 
+                        import { Swiper, SwiperSlide } from 'swiper/react';(Testimonial.jsx)
+
+                        // Import Swiper styles
+                        import 'swiper/css'; (Testimonial.jsx)
+                        import 'swiper/css/navigation'; (Testimonial.jsx)
+
+                        // import required modules
+                        import { Navigation } from 'swiper/modules'; (Testimonial.jsx)
+
+                        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+                        
+                        </Swiper> (Testimonial.jsx)

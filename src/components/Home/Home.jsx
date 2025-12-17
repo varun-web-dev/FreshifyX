@@ -6,6 +6,9 @@ import Values from '../Values/Values.jsx'
 import Heading from '../Heading/Heading.jsx'
 import Product from '../Products/Product.jsx'
 import Discount from '../Discount/Discount.jsx'
+import Process from '../Process/Process.jsx'
+import Testimonials from '../Testimonials/Testimonials.jsx'
+import Footer from '../Footer/Footer.jsx'
 
 const Home = () => {
   return (
@@ -16,6 +19,8 @@ const Home = () => {
       <Product />
       <Discount />
       <Process />
+      <Testimonials />
+      <Footer />
     </div>
   )
 }
