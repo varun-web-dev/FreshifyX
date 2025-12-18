@@ -53,5 +53,19 @@ Deployment :            Add:"scripts": {
 
                         npm install gh-pages --save-dev(Terminal)
 
+                        npm run build(Terminal)
+
                         npm run deploy(Terminal)
+
+Changes in main.jsx:    // before
+                        import { BrowserRouter } from 'react-router-dom';
+                        <BrowserRouter>
+                        <App />
+                        </BrowserRouter>
+
+                        // After
+                        import { HashRouter } from 'react-router-dom';
+                        <HashRouter>
+                        <App />
+                        </HashRouter>        
 
