@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
@@ -38,10 +38,10 @@ const Navbar = () => {
 
           {/* Desktop Links */}
           <ul className='md:flex items-center gap-8 font-medium  hidden'>
-            <li><Link to="/" className='tracking-wider text-zinc-800 hover:text-green-500'>Home</Link></li>
-            <li><Link to="/about" className='tracking-wider text-zinc-800 hover:text-green-500'>About Us</Link></li>
-            <li><Link to="/process" className='tracking-wider text-zinc-800 hover:text-green-500'>Process</Link></li>
-            <li><Link to="/contact" className='tracking-wider text-zinc-800 hover:text-green-500'>Contact Us</Link></li>
+            <li><NavLink to="/" className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>Home</NavLink></li>
+            <li><NavLink to="/about" className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>About Us</NavLink></li>
+            <li><NavLink to="/process" className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>Process</NavLink></li>
+            <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>Contact Us</NavLink></li>
           </ul>
 
           {/* Nav Action */}

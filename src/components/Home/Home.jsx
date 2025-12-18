@@ -8,7 +8,7 @@ import Product from '../Products/Product.jsx'
 import Discount from '../Discount/Discount.jsx'
 import Process from '../Process/Process.jsx'
 import Testimonials from '../Testimonials/Testimonials.jsx'
-import Footer from '../Footer/Footer.jsx'
+
 
 const Home = () => {
   return (
@@ -20,7 +20,7 @@ const Home = () => {
       <Discount />
       <Process />
       <Testimonials />
-      <Footer />
+      
     </div>
   )
 }

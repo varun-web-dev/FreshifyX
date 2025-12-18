@@ -36,7 +36,7 @@ const Values = () => {
 
     return (
         <section>
-            <div className='max-w-[1300px] mx-auto px-10 '>
+            <div className='max-w-[1300px] mx-auto px-10 mt-25'>
                 <Heading highlight="Our" heading="Values" />
 
                 <div className='md:flex flex-row  gap-5  mt-15'>

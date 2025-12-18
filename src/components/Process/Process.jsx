@@ -26,7 +26,7 @@ const Process = () => {
     })
     return (
         <section>
-            <div className='max-w-[1300px] mx-auto px-10 py-10'>
+            <div className='max-w-[1300px] mx-auto px-10 py-10 mt-25'>
                 <Heading highlight="Our" heading="Process" />
             </div>
             <div className='flex items-center justify-center mt- gap-10 flex-wrap'>

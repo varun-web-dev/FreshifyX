@@ -4,9 +4,10 @@ import { useState } from 'react'
 import ProductList from '../ProductList/ProductList.js'
 import Cards from '../Cards/Cards.jsx'
 import Button from '../Button/Button.jsx'
+import {Link} from 'react-router-dom'
 
 const Product = () => {
-    const tabs =["All","Vegetables","Fruits","Dairy","Meat"]
+    const tabs =["All","Vegetables","Fruits","Dairy","Meat", "SeaFood"]
 
     const [activTab,setActiveTab]=useState("All")
 
@@ -44,7 +45,7 @@ const Product = () => {
             </div>
 
             <div className='mt-15 mx-auto w-fit'>
-                <Button content="View All" />
+                <Link to="/allproducts"><Button content="View All" /></Link>
             </div>
         </div>
     </section>
