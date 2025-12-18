@@ -44,3 +44,14 @@ Install React Swiper :  npm run swiper(terminal)
                         <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                         
                         </Swiper> (Testimonial.jsx)
+
+Deployment :            Add:"scripts": {
+                                "dev": "vite",
+                                "build": "vite build",
+                                "deploy": "gh-pages -d dist"
+                            }
+
+                        npm install gh-pages --save-dev(Terminal)
+
+                        npm run deploy(Terminal)
+
