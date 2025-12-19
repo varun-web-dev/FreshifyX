@@ -60,7 +60,7 @@ const Navbar = () => {
             <Link to="/shoppingcart" className='mt-2 text-3xl text-zinc-800 '><FaShoppingCart /></Link>
 
             {/* HamBurger */}
-            <button onClick={toggleMenu} className="mt-2 text-3xl text-zinc-800 md:hidden">
+            <button onClick={toggleMenu} className="mt-2 text-3xl text-zinc-800 md:hidden cursor-pointer">
               {showMenu ? <TbMenu3 /> : <IoMenu />}
             </button> 
             
@@ -68,12 +68,12 @@ const Navbar = () => {
             </div>
             {/* Mobile Menu */}
           <ul className={`flex flex-col gap-y-10 p-10 bg-green-500/20 backdrop-blur-xl rounded-lg items-center gap-8 font-medium  md:hidden absolute top-20 transform left-[10%] right-[10%] transition-all duration-500 ${showMenu ? 'translate-x-0' : '-translate-x-169' }`}>
-              <li><Link to="/" className='tracking-wider text-zinc-800 hover:text-green-500'>Home</Link></li>
-              <li><Link to="/about" className='tracking-wider text-zinc-800 hover:text-green-500'>About Us</Link></li>
-              <li><Link to="/process" className='tracking-wider text-zinc-800 hover:text-green-500'>Process</Link></li>
-              <li><Link to="/contact" className='tracking-wider text-zinc-800 hover:text-green-500'>Contact Us</Link></li>
+              <li><NavLink to="/" onClick={toggleMenu} className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>Home</NavLink></li>
+              <li><NavLink to="/about" onClick={toggleMenu} className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>About Us</NavLink></li>
+              <li><NavLink to="/process" onClick={toggleMenu} className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>Process</NavLink></li>
+              <li><NavLink to="/contact" onClick={toggleMenu} className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>Contact Us</NavLink></li>
 
-              <li className='flex pl-4 pr-1 py-1 rounded-full border border-green-300 md:hidden'>
+              <li className='flex pl-4 pr-1 py-1 rounded-full border border-green-300 md:hidden max-w-auto '>
               <input type="text" name="text" id='text' placeholder='Search' className='focus:outline-none' />
               <button className='bg-linear-to-b from-green-400 to-green-600 rounded-full text-white flex items-center justify-center text-lg w-9 h-9 p-2 '>
                 <IoSearch />

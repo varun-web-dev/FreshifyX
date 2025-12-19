@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
     return (
         <footer>
-        <div className='flex flex-wrap md:gap-0 gap-12 max-w-[1300px] mx-auto px-10 py-10 bg-zinc-200'>
+        <div className='flex flex-wrap md:gap-0 gap-12 max-w-[1300px] mx-auto px-10 py-10 bg-zinc-200 md:mt-20 mt-10'>
 
             <div className='flex-1 basis-[300px]'>
                 <Link to="/" className='text-3xl font-semibold '>Freshify<span className='text-green-500 text-4xl'>X</span></Link>
