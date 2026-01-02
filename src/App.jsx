@@ -12,6 +12,7 @@ import Values from "./components/Values/Values.jsx";
 import Testimonials from "./components/Testimonials/Testimonials.jsx";
 import WebLayout from "./components/WebLayout/WebLayout.jsx";
 import Favorites from "./components/Favorites/Favorites.jsx";
+import ShoppingCart from "./components/ShoppingCart/ShoppingCart.jsx";
 
 const App = () => {
   
@@ -26,7 +27,7 @@ const App = () => {
           <Route path="/process" element={<Process />} />
           <Route path="/contact" element={<h1>Contact Us Page</h1>} />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="/shoppingcart" element={<h1>Shopping Cart Page</h1>} />
+          <Route path="/shoppingcart" element={<ShoppingCart />} />
           <Route path="/faq" element={<h1>FAQ's Page</h1>} />
           <Route path="/support" element={<h1>Support Center Page</h1>} />
           <Route path="/feedback" element={<h1>Feedback Page</h1>} />

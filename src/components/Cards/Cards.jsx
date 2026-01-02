@@ -3,6 +3,7 @@ import { FaPlus, FaHeart } from 'react-icons/fa'
 import Button from '../Button/Button.jsx'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleFavorite } from '../../redux/favoriteSlice.js'
+import { addToCart } from '../../redux/cartSlice.js'
 
 const Cards = ({ image, name, price, product }) => {
 
@@ -25,7 +26,9 @@ const Cards = ({ image, name, price, product }) => {
           <FaHeart />
         </span>
 
-        <button className='bg-gradient-to-b from-green-400 to-green-500 text-white p-2 rounded-md hover:shadow-lg hover:scale-105 transition-all duration-300'>
+        <button 
+        onClick={() => dispatch(addToCart(product))}
+        className='bg-gradient-to-b from-green-400 to-green-500 text-white p-2 rounded-md hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer'>
           <FaPlus />
         </button>
       </div>

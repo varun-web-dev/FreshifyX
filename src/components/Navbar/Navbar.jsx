@@ -13,6 +13,9 @@ import { useSelector } from 'react-redux';
 
 
 const Navbar = () => {
+
+  const cartItems = useSelector(state => state.cart.items);
+
   const favCount = useSelector(
     state => state.favorites.items.length
   )
@@ -69,7 +72,16 @@ const Navbar = () => {
                 </span>
               )}
             </Link>
-            <Link to="/shoppingcart" className='mt-2 text-3xl text-zinc-800 '><FaShoppingCart /></Link>
+            
+            <Link to="/shoppingcart" className="relative mt-2 text-3xl">
+              <FaShoppingCart />
+              {cartItems.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                  {cartItems.length}
+                </span>
+              )}
+            </Link>
+
 
             {/* HamBurger */}
             <button onClick={toggleMenu} className="mt-2 text-3xl text-zinc-800 md:hidden cursor-pointer">
