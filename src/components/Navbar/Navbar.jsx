@@ -8,17 +8,22 @@ import { IoSearch } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
 import { TbMenu3 } from "react-icons/tb";
 import Home from '../Home/Home.jsx'
+import { useSelector } from 'react-redux';
 
 
 
 const Navbar = () => {
-  const[showMenu, setShowMenu] = useState(false);
+  const favCount = useSelector(
+    state => state.favorites.items.length
+  )
+
+  const [showMenu, setShowMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   }
-  
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,10 +37,10 @@ const Navbar = () => {
   return (
     <div>
       <header className=''>
-        <nav className={`max-w-[1300px] mx-auto px-10 fixed left-0 right-0 top-0 pt-9 pb-9 bg-white flex justify-between items-center md:h-[12vh] h-[10vh] max z-50 ${scrolled ? 'shadow-lg' : '' }`}>
+        <nav className={`max-w-[1300px] mx-auto px-10 fixed left-0 right-0 top-0 pt-9 pb-9 bg-white flex justify-between items-center md:h-[12vh] h-[10vh] max z-50 ${scrolled ? 'shadow-lg' : ''}`}>
           {/* logo */}
           <Link to="/" className='text-3xl font-semibold '>Freshify<span className='text-green-500 text-4xl'>X</span></Link>
- 
+
           {/* Desktop Links */}
           <ul className='md:flex items-center gap-8 font-medium  hidden'>
             <li><NavLink to="/" className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>Home</NavLink></li>
@@ -56,33 +61,40 @@ const Navbar = () => {
               </button>
             </div>
 
-            <Link to="/favorites" className='mt-2 text-3xl text-zinc-800 '><BsBagHeartFill /></Link>
+            <Link to="/favorites" className="relative mt-2 text-3xl text-zinc-800">
+              <BsBagHeartFill />
+              {favCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
+                  {favCount}
+                </span>
+              )}
+            </Link>
             <Link to="/shoppingcart" className='mt-2 text-3xl text-zinc-800 '><FaShoppingCart /></Link>
 
             {/* HamBurger */}
             <button onClick={toggleMenu} className="mt-2 text-3xl text-zinc-800 md:hidden cursor-pointer">
               {showMenu ? <TbMenu3 /> : <IoMenu />}
-            </button> 
-            
+            </button>
 
-            </div>
-            {/* Mobile Menu */}
-          <ul className={`flex flex-col gap-y-10 p-10 bg-green-500/20 backdrop-blur-xl rounded-lg items-center gap-8 font-medium  md:hidden absolute top-20 transform left-[10%] right-[10%] transition-all duration-500 ${showMenu ? 'translate-x-0' : '-translate-x-169' }`}>
-              <li><NavLink to="/" onClick={toggleMenu} className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>Home</NavLink></li>
-              <li><NavLink to="/about" onClick={toggleMenu} className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>About Us</NavLink></li>
-              <li><NavLink to="/process" onClick={toggleMenu} className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>Process</NavLink></li>
-              <li><NavLink to="/contact" onClick={toggleMenu} className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>Contact Us</NavLink></li>
 
-              <li className='flex pl-4 pr-1 py-1 rounded-full border border-green-300 md:hidden min-w-auto '>
+          </div>
+          {/* Mobile Menu */}
+          <ul className={`flex flex-col gap-y-10 p-10 bg-green-500/20 backdrop-blur-xl rounded-lg items-center gap-8 font-medium  md:hidden absolute top-20 transform left-[10%] right-[10%] transition-all duration-500 ${showMenu ? 'translate-x-0' : '-translate-x-169'}`}>
+            <li><NavLink to="/" onClick={toggleMenu} className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>Home</NavLink></li>
+            <li><NavLink to="/about" onClick={toggleMenu} className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>About Us</NavLink></li>
+            <li><NavLink to="/process" onClick={toggleMenu} className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>Process</NavLink></li>
+            <li><NavLink to="/contact" onClick={toggleMenu} className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>Contact Us</NavLink></li>
+
+            <li className='flex pl-4 pr-1 py-1 rounded-full border border-green-300 md:hidden min-w-auto '>
               <input type="text" name="text" id='text' placeholder='Search' className='focus:outline-none' />
               <button className=' bg-linear-to-b from-green-400 to-green-600 rounded-full text-white flex items-center justify-center text-lg w-9 h-9 p-2 '>
                 <IoSearch />
               </button>
             </li>
-            </ul>
-            
+          </ul>
 
-          
+
+
         </nav>
 
       </header>
