@@ -11,7 +11,7 @@ const CategoryViewAll = ({title, bgImage, tabs=[]}) => {
 
     const renderProducts = filteredItems.map(items => {
         return (
-            <Cards image={items.image} name={items.name} price={items.price} />
+            <Cards key={items.id} image={items.image} name={items.name} price={items.price} product={items}/>
         )
     })
     return (

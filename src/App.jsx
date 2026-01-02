@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./components/Home/Home.jsx";
 import { Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Fruits from "./components/Fruits/Fruits.jsx";
 import Dairy from "./components/Dairy/Dairy.jsx";
@@ -10,18 +11,21 @@ import Process from "./components/Process/Process.jsx"
 import Values from "./components/Values/Values.jsx";
 import Testimonials from "./components/Testimonials/Testimonials.jsx";
 import WebLayout from "./components/WebLayout/WebLayout.jsx";
+import Favorites from "./components/Favorites/Favorites.jsx";
 
 const App = () => {
+  
   return (
-    <div  className='font-poppins'>
-     
+    <div className='font-poppins'>
+
       <Routes>
-        <Route element={<WebLayout /> }>
+        <Route element={<WebLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<> <Values /><Testimonials/> </>} />
+        
+          <Route path="/about" element={<> <Values /><Testimonials /> </>} />
           <Route path="/process" element={<Process />} />
           <Route path="/contact" element={<h1>Contact Us Page</h1>} />
-          <Route path="/favourite" element={<h1>Favourite Page</h1>} />
+          <Route path="/favorites" element={<Favorites />} />
           <Route path="/shoppingcart" element={<h1>Shopping Cart Page</h1>} />
           <Route path="/faq" element={<h1>FAQ's Page</h1>} />
           <Route path="/support" element={<h1>Support Center Page</h1>} />
@@ -30,8 +34,8 @@ const App = () => {
           <Route path="/dairy" element={<Dairy />} />
           <Route path="/meat" element={<Meat />} />
           <Route path="/allproducts" element={<AllProducts />} />
-        </Route > 
-        </Routes>
+        </Route>
+      </Routes>
     </div>
   );
 }

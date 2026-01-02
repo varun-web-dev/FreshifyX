@@ -35,7 +35,7 @@ const Navbar = () => {
         <nav className={`max-w-[1300px] mx-auto px-10 fixed left-0 right-0 top-0 pt-9 pb-9 bg-white flex justify-between items-center md:h-[12vh] h-[10vh] max z-50 ${scrolled ? 'shadow-lg' : '' }`}>
           {/* logo */}
           <Link to="/" className='text-3xl font-semibold '>Freshify<span className='text-green-500 text-4xl'>X</span></Link>
-
+ 
           {/* Desktop Links */}
           <ul className='md:flex items-center gap-8 font-medium  hidden'>
             <li><NavLink to="/" className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>Home</NavLink></li>
@@ -56,7 +56,7 @@ const Navbar = () => {
               </button>
             </div>
 
-            <Link to="/favourite" className='mt-2 text-3xl text-zinc-800 '><BsBagHeartFill /></Link>
+            <Link to="/favorites" className='mt-2 text-3xl text-zinc-800 '><BsBagHeartFill /></Link>
             <Link to="/shoppingcart" className='mt-2 text-3xl text-zinc-800 '><FaShoppingCart /></Link>
 
             {/* HamBurger */}
@@ -73,9 +73,9 @@ const Navbar = () => {
               <li><NavLink to="/process" onClick={toggleMenu} className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>Process</NavLink></li>
               <li><NavLink to="/contact" onClick={toggleMenu} className={({ isActive }) => isActive ? 'tracking-wider text-green-500' : 'tracking-wider text-zinc-800 hover:text-green-500'}>Contact Us</NavLink></li>
 
-              <li className='flex pl-4 pr-1 py-1 rounded-full border border-green-300 md:hidden max-w-auto '>
+              <li className='flex pl-4 pr-1 py-1 rounded-full border border-green-300 md:hidden min-w-auto '>
               <input type="text" name="text" id='text' placeholder='Search' className='focus:outline-none' />
-              <button className='bg-linear-to-b from-green-400 to-green-600 rounded-full text-white flex items-center justify-center text-lg w-9 h-9 p-2 '>
+              <button className=' bg-linear-to-b from-green-400 to-green-600 rounded-full text-white flex items-center justify-center text-lg w-9 h-9 p-2 '>
                 <IoSearch />
               </button>
             </li>
