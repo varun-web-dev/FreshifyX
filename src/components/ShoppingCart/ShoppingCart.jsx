@@ -28,72 +28,72 @@ const ShoppingCart = () => {
 
     return (
         <div className="max-w-[1100px] mx-auto px-6 py-20 grid md:grid-cols-3 gap-10">
+            
 
             {/*  CART ITEMS */}
             <div className="md:col-span-2 space-y-6">
                 {cart.map(item => {
-                    const itemTotal = (item.price || 0) * (item.qty || 0);
+                    const itemTotal = Number(item.price || 0) * Number(item.qty || 0);
+
                     return (
-                    <div
-                        key={item.id}
-                        className="flex gap-6 items-center bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition"
-                    >
-                        {/* Image */}
-                        <img
-                            src={item.image}
-                            alt={item.name}
-                            className="w-24 h-24 object-contain"
-                        />
-
-                        {/* Info */}
-                        <div className="flex-1">
-                            <h3 className="text-lg font-semibold">{item.name}</h3>
-                            <p className="text-green-600 font-bold mt-1">
-                                ${item.price}
-                            </p>
-                        </div>
-
-                        {/* Quantity */}
-                        <div className="flex items-center gap-3 bg-zinc-100 px-3 py-2 rounded-full">
-                            <button
-                                onClick={() => dispatch(decreaseQty(item.id))}
-                                className="hover:text-red-500 transition cursor-pointer"
-                            >
-                                <FaMinus />
-                            </button>
-
-                            <span className="font-semibold">{item.qty}</span>
-
-                            <button
-                                onClick={() => dispatch(addToCart(item))}
-                                className="hover:text-green-500 transition cursor-pointer"
-                            >
-                                <FaPlus />
-                            </button>
-                        </div>
-
-                        {/* ITEM TOTAL */}
-                        <div className="text-center min-w-[90px]">
-                            <p className="text-zinc-500 text-sm">Total</p>
-                            <p className="text-lg font-bold text-green-600">
-                                ${itemTotal.toFixed(2)}
-                            </p>
-                        </div>
-
-                        {/* Remove */}
-                        <button
-                            onClick={() => dispatch(removeFromCart(item.id))}
-                            className="text-red-500 text-3xl hover:scale-110 transition cursor-pointer"
+                        <div
+                            key={item.id}
+                            className="flex flex-col md:flex-row gap-6 md:items-center bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition"
                         >
-                            <FaTrash />
-                        </button>
-                    </div>
+                            {/* Image */}
+                            <img
+                                src={item.image}
+                                alt={item.name}
+                                className="w-24 h-24 object-contain mx-auto md:mx-0"
+                            />
+
+                            {/* Info */}
+                            <div className="flex-1 text-center md:text-left">
+                                <h3 className="text-lg font-semibold">{item.name}</h3>
+                                <p className="text-green-600 font-bold mt-1">
+                                    ${Number(item.price).toFixed(2)}
+                                </p>
+                            </div>
+
+                            {/* Qty + Total */}
+                            <div className="flex flex-col md:flex-row items-center gap-4">
+                                {/* Quantity */}
+                                <div className="flex items-center gap-3 bg-zinc-100 px-4 py-2 rounded-full">
+                                    <button onClick={() => dispatch(decreaseQty(item.id))}>
+                                        <FaMinus />
+                                    </button>
+
+                                    <span className="font-semibold">{item.qty}</span>
+
+                                    <button onClick={() => dispatch(addToCart(item))}>
+                                        <FaPlus />
+                                    </button>
+                                </div>
+
+                                {/* Item Total */}
+                                <div className="text-center min-w-[90px]">
+                                    <p className="text-zinc-500 text-sm">Total</p>
+                                    <p className="text-lg font-bold text-green-600">
+                                        ${itemTotal.toFixed(2)}
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Remove */}
+                            <button
+                                onClick={() => dispatch(removeFromCart(item.id))}
+                                className="text-red-500 text-2xl md:text-3xl self-center md:self-auto"
+                            >
+                                <FaTrash />
+                            </button>
+                        </div>
                     );
                 })}
+
             </div>
 
             {/* SUMMARY */}
-            <div className="bg-white p-6 rounded-xl shadow-lg h-fit">
+            <div className="bg-white p-6 rounded-xl shadow-lg h-fit space-y-auto">
                 <h2 className="text-xl font-bold mb-6">Order Summary</h2>
 
                 <div className="flex justify-between mb-3">

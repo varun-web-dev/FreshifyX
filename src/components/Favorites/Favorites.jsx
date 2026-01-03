@@ -6,13 +6,14 @@ const Favorites = () => {
   const favorites = useSelector(state => state.favorites.items);
 
   return (
-    <div className="p-6">
+    <div className="max-w-[1300px] mx-auto px-10 mt-20 p-6">
       <h2 className="text-2xl font-bold mb-6">❤️ Favorite Products</h2>
 
-      {favorites.length === 0 ? (
+      {
+        favorites.length === 0 ? (
         <p>No favorites yet</p>
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {favorites.map(item => (
             <Cards
               key={item.id}
